@@ -1,9 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+    <ion-toolbar>
+      <ion-title>
+        Insert Author
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-input placeholder="Insert your name" [(ngModel)]='author'></ion-input>
+      <ion-button (click)='set()'>Set</ion-button>
+  </ion-content>
+  

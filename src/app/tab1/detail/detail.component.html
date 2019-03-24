@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <a href='/tabs/tab1'>
+      <ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+        <p class="menuSubTitle"></p>
+      </ion-button>
+    </a>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card" *ngIf='post'>
+      <ion-img [src]="post.image || '/assets/shapes.svg'"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{post.author}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{post.message}}</p>
+    </ion-card-content>
+    <ion-toolbar *ngFor='let comment of post.comments'>
+      <h3>{{comment.author}}</h3>
+      <p>{{comment.message}}</p>
+    </ion-toolbar>
+  </ion-card>
+</ion-content>
+
+<ion-toolbar>
+  <ion-input [(ngModel)]="comment.message" placeholder="Scrivi messaggio"></ion-input>
+  <!-- <ion-input [(ngModel)]="comment.author" placeholder="Inserisci autore"></ion-input> -->
+  <ion-button (click)="addComment_()">
+    <ion-icon slot="icon-only" name="send"></ion-icon>
+  </ion-button>
+</ion-toolbar>

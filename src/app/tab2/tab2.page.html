@@ -1,9 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+    <ion-toolbar>
+      <ion-title>
+        CreatePost
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-input placeholder="Insert your post image-url" [(ngModel)]='post.image'></ion-input>
+      <!-- <ion-input placeholder="Insert your post author" [(ngModel)]='post.author'></ion-input> -->
+      <ion-input placeholder="Insert your post message" [(ngModel)]='post.message'></ion-input>
+      <ion-button (click)='set()'>Set</ion-button>
+  </ion-content>
